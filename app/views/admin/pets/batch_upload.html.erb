@@ -1,0 +1,21 @@
+<h1 class="backend_h1 pets_header color">Batch Upload</h1>
+
+<%= form_for :xml, url: do_batch_upload_admin_pets_path, method: :post, :html => {:class => "admin_form"} do |f| %>
+<table border="0" cellspacing="0" cellpadding="0" class="form_table">
+<tr>
+    <td class="label_td">
+        File:
+    </td>
+    <td class="value_td">
+        <%= f.select :file, [['Play','play'],['Pets','pets']] %>
+    </td>
+</tr>
+<tr>
+    <td class="span_td" colspan="2">
+
+        <%= f.submit "Upload", :class => 'create', data: { confirm: "Are you sure?" } %>
+        
+    </td>
+</tr>
+</table>
+<% end %>

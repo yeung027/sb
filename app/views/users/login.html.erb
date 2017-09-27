@@ -1,0 +1,29 @@
+<div class="login_wrapper">
+<div class="login_inner">
+    <div class="flash_msg_wrapper">
+        <% if flash[:error] %>
+        <%=image_tag("admin/users/error_icon.png")%>
+        <%=flash[:error]%>
+        <% end %>
+    </div><!--end flash_msg_wrapper-->
+<div class="login_box_wrapper">
+    <div class="login_box <%=@box_class%>">
+        <div class="login_people"></div>
+        <div class="login_label">Login</div>
+        <%= form_for :user, url: auth_users_path, :html => {class: 'login_form' }  do |f| %>
+        <div class="login_field_wrapper">
+            <%= f.text_field :login, placeholder: "login name" %>
+        </div>
+        <div class="password_field_wrapper">
+            <%= f.password_field :password, placeholder: "password" %>
+        </div>
+        <% end %>
+    </div><!--end login_box-->
+</div>
+</div>
+</div>
+<script>
+    $( document ).ready(function() {
+       users_login(); 
+    });
+</script>

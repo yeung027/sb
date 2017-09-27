@@ -1,0 +1,100 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body.posts.show
+{
+.post-top-banner
+{
+    width:1280px;
+    height:435px;
+    background-image: asset-url("posts/post-top-banner.png", image);
+}
+
+.post-outer
+{
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
+.post-wrapper
+{
+    background-color: #fff;
+    width:1280px;
+    min-height:435px;
+    text-align: left;
+}
+.post-wrapper .post-date-wrapper
+{
+    width:1280px;
+    height:60px;
+    text-align: center;
+}
+.post-wrapper .post-date-inner
+{
+    display: inline-block;
+    background-color: #ffc617;
+    width:165px;
+    height:60px;
+    line-height: 60px;
+    
+    font-size: 30px;
+    color: #fff;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight:100;
+}
+
+.post-wrapper .post-date-inner strong
+{
+    font-weight: 700;
+}
+
+.post-wrapper .title
+{
+    width:1280px;
+    text-align: center;
+    margin-top:60px;
+    color: #666;
+    font-size: 72px;
+    font-weight: 100 !important;
+    line-height: 1em;
+    word-wrap: break-word;
+    font-family: 'Raleway', Arial, sans-serif;
+
+}
+
+.post-wrapper .posted-by
+{
+    width:1280px;
+    text-align: center;
+    margin-top:58px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    font-family: 'Raleway', Arial, sans-serif;
+}
+
+.post-wrapper .posted-by a
+{
+    color: #666;
+    text-decoration: none;
+    font-weight: 700 !important;
+}
+
+.post-wrapper .post-content-wrapper
+{
+    width:1160px;
+    text-align: left;
+    margin-top:80px;
+    padding:0 0 60px 60px;
+    line-height: 39px;
+    font-size: 22px;
+    vertical-align: baseline;
+    word-wrap: break-word;
+    font-weight: 200;
+    font-family: 'Raleway', Arial, sans-serif;
+}
+    
+    
+    
+}

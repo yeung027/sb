@@ -1,0 +1,53 @@
+<div class="post-outer">
+<div class="post-top-banner">
+</div>
+<div class="post-wrapper">
+    <div class="post-date-wrapper" id="post-date">
+    <div class="post-date-inner">
+        <strong><%=@post.created_at.strftime("%b") %>.</strong><%=@post.created_at.strftime("%d") %>
+    </div>
+    </div><!--end of post-date-wrapper-->
+    
+    <div class="title" id="main-content">
+        <%=@post.title%>
+    </div>
+    
+    <div class="posted-by">
+        Posted by <a href='#'><%=@post.user.name%></a>
+    </div>
+    
+    <div class="post-content-wrapper">
+        <%=@post.content.html_safe%>
+    </div>
+    
+    
+</div><!--end of post-wrapper-->
+</div>
+
+<% if is_admin? %>
+<section id="admin-wrap">
+    <div id="admin-title">Admin Only</div>
+    <div id="admin-inner">
+        <input class="create" type="button" value="Edit" onclick="window.location='<%=edit_post_path(params[:id])%>'" />
+        <%= link_to raw('<input class="delete red" type="button" value="Delete" />'), post_path(@post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, html: :ok %>
+    </div>
+</section>
+<% end %>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_HK/sdk.js#xfbml=1&version=v2.6&appId=997476640336267";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<section id="comment-wrap">
+    <div id="comment-inner">
+        <div class="fb-comments" data-href="<%=url_for(:only_path => false) %>" data-width="100%" data-numposts="5"></div>
+    </div>
+</section>

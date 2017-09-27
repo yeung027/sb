@@ -1,0 +1,58 @@
+<ul id="backend_menu">
+    <li id="user_header">
+        <div class="box">
+            <div id="backend_menu_photo"></div>
+            <div id="user_name">
+                <%=get_user.nil? ? "" : get_user.name%>
+                <div class="drow_arrow"></div>
+            </div>
+        </div>
+    </li><!--end of top box li-->
+    <li class="sep1"></li>
+    <li class="sep2"></li>
+    <li class="item users">
+        <a href="<%=users_path%>">Users</a>
+    </li>
+    <div id="user_sub_menu" class="sub_menu_wrapper">
+        <li class="sep1"></li>
+        <li class="sep2"></li>
+        <li class="sub_menu">
+            <ul>
+                <li><a href="<%=new_user_path%>">Create user</a></li>
+            </ul>
+        </li>
+    </div>
+    <li class="sep1"></li>
+    <li class="sep2"></li>
+    <li class="item posts">
+        <a href="<%=new_post_path%>">Post</a>
+    </li>
+    <div id="post_sub_menu" class="sub_menu_wrapper">
+        <li class="sep1"></li>
+        <li class="sep2"></li>
+        <li class="sub_menu">
+            <ul>
+                <li><a href="<%=new_post_path%>">Create post</a></li>
+            </ul>
+        </li>
+    </div>
+    <li class="sep1"></li>
+    <li class="sep2"></li>
+    <li class="item pets">
+        <a href="<%=new_pet_path%>">Pet</a>
+    </li>
+    <div id="pet_sub_menu" class="sub_menu_wrapper">
+        <li class="sep1"></li>
+        <li class="sep2"></li>
+        <li class="sub_menu">
+            <ul>
+                <li><a href="<%=new_pet_path%>">Create pet</a></li>
+                <li><a href="<%=admin_pets_path%>">Pet list</a></li>
+                <li><a href="<%=update_all_pets_rankings_rankings_path%>">Update all pets rankings</a></li>
+                <li><a href="<%=batch_upload_admin_pets_path%>">Import pets from XML</a></li>
+            </ul>
+        </li>
+    </div>
+    <li class="sep1"></li>
+    <li class="sep2"></li>
+</ul>

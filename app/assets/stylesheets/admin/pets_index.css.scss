@@ -1,0 +1,31 @@
+body.admin_pets.index
+{
+
+
+.list-wrapper .item
+{
+    float: left;
+    width: 98px;
+    height:98px;
+    margin:0 10px 10px 0;
+}   
+    
+.list-wrapper .item .not-found
+{
+    width: 98px;
+    height:98px;   
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #a3a3a3;
+    font-weight: bold;
+    
+}
+    
+.list-wrapper .item img 
+{
+    width: 98px;
+    height:98px;      
+}
+    
+}

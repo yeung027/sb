@@ -1,0 +1,391 @@
+<% if @pet.errors.any? %>
+<ul class="error_wrapper">
+<% @pet.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+
+<%= form_for :pet, url: @submit_path, method: @method, :html => {:class => "admin_form"} do |f| %>
+<input type="hidden" value="<%=form_search_admin_pets_path%>" id ="search_profile_image_url">
+<input type="hidden" value="" id ="search_profile_image_target">
+<table border="0" cellspacing="0" cellpadding="0" class="form_table">
+
+<tr>
+    <td class="label_td">
+        Number:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :number, :class => @pet.errors.any? && @pet.errors[:number].any? ? "error" : "" %>
+    </td>
+</tr>
+
+<tr>
+    <td class="label_td">
+        Name:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :name, :class => @pet.errors.any? && @pet.errors[:name].any? ? "error" : "" %>
+    </td>
+</tr>
+
+<tr>
+    <td class="label_td">
+        Chinese Name:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :chinese_name, :class => @pet.errors.any? && @pet.errors[:chinese_name].any? ? "error" : "" %>
+    </td>
+</tr>
+
+    
+<tr>
+    <td class="label_td">
+        Attribute:
+    </td>
+    <td class="value_td">
+        <%= f.select :pet_attribute, [['火','火'],['水','水'],['木','木'],['光','光'],['闇','闇']], :include_blank => true %>
+    </td>
+</tr>
+
+<tr>
+    <td class="label_td">
+        Type1:
+    </td>
+    <td class="value_td">
+        <%= f.select :type1, [['平衡','バランス'],['攻撃','攻撃'],['HP','HP'],['進化用','進化用'],['育成用','育成用'],['副属性用','副属性用'],['売却用','売却用']], :include_blank => true %>
+    </td>
+</tr>
+    
+<tr>
+    <td class="label_td">
+        Type2:
+    </td>
+    <td class="value_td">
+        <%= f.select :type2, [['防禦','ディフェンス'], ['反擊','カウンター'],['副助','アシスト'],['拳頭','アタック'],['技能攻擊','スキルアタック']], :include_blank => true %>
+    </td>
+</tr>
+
+<tr>
+    <td></td>
+    <td>
+        <div class="profile-wrapper">
+            <div class="profile-inner" id="pet_before_evolution_pic">
+                <% if !@pet.new_record? && !@pet.before_evolution_pet.nil? %>
+                <% if @pet.before_evolution_pet.profile_image.exists? %>
+                    <img src="<%=@pet.before_evolution_pet.profile_image.url() %>" />
+                <% else %>
+                    <%= image_tag "pets/icon/"+get_str_key(@pet.before_evolution_pet.number)+".png" %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </td>
+</tr>    
+
+<tr>
+    <td class="label_td">
+        Before Evolution:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :before_evolution, :class => @pet.errors.any? && @pet.errors[:before_evolution].any? ? "error" : "" %>
+    </td>
+</tr>
+ 
+    
+<tr>
+    <td></td>
+    <td>
+        <div class="profile-wrapper">
+            <div class="profile-inner" id="pet_after_evolution_pic">
+                <% if !@pet.new_record? && !@pet.after_evolution_pet.nil? %>
+                <% if @pet.after_evolution_pet.profile_image.exists? %>
+                    <img src="<%=@pet.after_evolution_pet.profile_image.url() %>" />
+                <% else %>
+                    <%= image_tag "pets/icon/"+get_str_key(@pet.after_evolution_pet.number)+".png" %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </td>
+</tr>    
+
+<tr>
+    <td class="label_td">
+        After Evolution:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :after_evolution, :class => @pet.errors.any? && @pet.errors[:after_evolution].any? ? "error" : "" %>
+    </td>
+</tr>
+    
+<tr>
+    <td></td>
+    <td>
+        <div class="profile-wrapper">
+            <div class="profile-inner" id="pet_material_1_pic">
+                <% if !@pet.new_record? && !@pet.material_1_pet.nil? %>
+                <% if @pet.material_1_pet.profile_image.exists? %>
+                    <img src="<%=@pet.material_1_pet.profile_image.url() %>" />
+                <% else %>
+                    <%= image_tag "pets/icon/"+get_str_key(@pet.material_1_pet.number)+".png" %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </td>
+</tr>    
+
+<tr>
+    <td class="label_td">
+        Material 1:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :material_1, :class => @pet.errors.any? && @pet.errors[:material_1].any? ? "error" : "" %>
+    </td>
+</tr>
+    
+<tr>
+    <td></td>
+    <td>
+        <div class="profile-wrapper">
+            <div class="profile-inner" id="pet_material_2_pic">
+                <% if !@pet.new_record? && !@pet.material_2_pet.nil? %>
+                <% if @pet.material_2_pet.profile_image.exists? %>
+                    <img src="<%=@pet.material_2_pet.profile_image.url() %>" />
+                <% else %>
+                    <%= image_tag "pets/icon/"+get_str_key(@pet.material_2_pet.number)+".png" %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </td>
+</tr>    
+
+<tr>
+    <td class="label_td">
+        Material 2:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :material_2, :class => @pet.errors.any? && @pet.errors[:material_2].any? ? "error" : "" %>
+    </td>
+</tr>
+
+    
+    
+    
+<tr>
+    <td></td>
+    <td>
+        <div class="profile-wrapper">
+            <div class="profile-inner" id="pet_material_3_pic">
+                <% if !@pet.new_record? && !@pet.material_3_pet.nil? %>
+                <% if @pet.material_3_pet.profile_image.exists? %>
+                    <img src="<%=@pet.material_3_pet.profile_image.url() %>" />
+                <% else %>
+                    <%= image_tag "pets/icon/"+get_str_key(@pet.material_3_pet.number)+".png" %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </td>
+</tr>    
+
+<tr>
+    <td class="label_td">
+        Material 3:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :material_3, :class => @pet.errors.any? && @pet.errors[:material_3].any? ? "error" : "" %>
+    </td>
+</tr>   
+    
+    
+    
+<tr>
+    <td></td>
+    <td>
+        <div class="profile-wrapper">
+            <div class="profile-inner" id="pet_material_4_pic">
+                <% if !@pet.new_record? && !@pet.material_4_pet.nil? %>
+                <% if @pet.material_4_pet.profile_image.exists? %>
+                    <img src="<%=@pet.material_4_pet.profile_image.url() %>" />
+                <% else %>
+                    <%= image_tag "pets/icon/"+get_str_key(@pet.material_4_pet.number)+".png" %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </td>
+</tr>    
+
+<tr>
+    <td class="label_td">
+        Material 4:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :material_4, :class => @pet.errors.any? && @pet.errors[:material_4].any? ? "error" : "" %>
+    </td>
+</tr>     
+<tr>
+    <td class="label_td">
+        Obtain:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :obtain, :class => @pet.errors.any? && @pet.errors[:obtain].any? ? "error" : "" %>
+    </td>
+</tr>
+    
+<tr>
+    <td class="label_td">
+        Leader Skill Name:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :leader_skill_name, :class => @pet.errors.any? && @pet.errors[:leader_skill_name].any? ? "error" : "" %>
+    </td>
+</tr>
+    
+<tr>
+    <td class="label_td">
+        Active Skill Name:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :active_skill_name, :class => @pet.errors.any? && @pet.errors[:active_skill_name].any? ? "error" : "" %>
+    </td>
+</tr>
+    
+<tr>
+    <td class="label_td">
+        Star:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :star, :class => @pet.errors.any? && @pet.errors[:star].any? ? "error" : "" %>
+    </td>
+</tr>
+    
+<tr>
+    <td class="label_td <%= @pet.profile_image.exists? ? 'valign-top' : '' %>">
+        Profile Image:
+    </td>
+    <td class="value_td">
+        <% if @pet.profile_image.exists? %>
+        <div class="attachment-wrapper">
+            <img src="<%=@pet.profile_image.url() %>" />
+        </div>
+        <% elsif !@pet.new_record? %>
+        <div class="attachment-wrapper">
+            <%= image_tag "pets/icon/"+get_str_key(@pet.number)+".png", :itemprop=>"image" %>
+        </div>
+        <% end %>
+        <%= f.file_field :profile_image, :class => @pet.errors.any? && @pet.errors[:profile_image].any? ? "error" : "" %>
+        <% if @pet.profile_image.exists? || !@pet.new_record? %><div style="height:50px;"></div><% end %>
+    </td>
+</tr>
+
+<tr>
+    <td class="label_td <%= @pet.circle_image.exists? ? 'valign-top' : '' %>">
+        Circle Image:
+    </td>
+    <td class="value_td">
+        <% if @pet.circle_image.exists? %>
+        <div class="attachment-wrapper">
+            <img src="<%=@pet.circle_image.url() %>" />
+        </div>
+        <% end %>
+        <%= f.file_field :circle_image, :class => @pet.errors.any? && @pet.errors[:circle_image].any? ? "error" : "" %>
+        <% if @pet.circle_image.exists? %><div style="height:50px;"></div><% end %>
+    </td>
+</tr>
+
+    
+<tr>
+    <td class="label_td <%= @pet.right_big_image.exists? ? 'valign-top' : '' %>">
+        Right Big Image:
+    </td>
+    <td class="value_td">
+        <% if @pet.right_big_image.exists? %>
+        <div class="attachment-wrapper">
+            <img src="<%=@pet.right_big_image.url() %>" />
+        </div>
+        <% elsif !@pet.new_record? %>
+        <div class="attachment-wrapper">
+            <%= image_tag "pets/big/"+get_str_key(@pet.number)+".png", :itemprop=>"image" %>
+        </div>
+        <% end %>
+        <%= f.file_field :right_big_image, :class => @pet.errors.any? && @pet.errors[:right_big_image].any? ? "error" : "" %>
+        <% if @pet.right_big_image.exists? || !@pet.new_record? %><div style="height:50px;"></div><% end %>
+    </td>
+</tr>   
+
+<tr>
+    <td class="label_td valign-top">
+        Skill:
+    </td>
+    <td class="value_td">
+        <%= f.text_area :skill, :rows => 10, :class => @pet.errors.any? && @pet.errors[:skill].any? ? "error" : "" %>
+    </td>
+</tr>
+
+<tr>
+    <td class="label_td">
+        Skill Range:
+    </td>
+    <td class="value_td">
+        <%= f.select :skill_range, options_for_select(Pet.skill_range_types, @pet.skill_range) %>
+    </td>
+</tr>
+
+
+    
+<tr>
+    <td class="label_td valign-top">
+        Leader Skill:
+    </td>
+    <td class="value_td">
+        <%= f.text_area :leader_skill, :rows => 10, :class => @pet.errors.any? && @pet.errors[:leader_skill].any? ? "error" : "" %>
+    </td>
+</tr>    
+<tr><td></td><td></td></tr>
+<tr>
+    <td class="label_td valign-top">
+        Content:
+    </td>
+    <td class="value_td">
+        <%= f.text_area :content, :rows => 10, :class => @pet.errors.any? && @pet.errors[:content].any? ? "error" : "" %>
+    </td>
+</tr>
+<tr>
+    <td class="span_td" colspan="2">
+            <input class="back gray" type="button" value="Back" onclick="window.location='<%=pets_path%>'" />
+        <%= f.submit @submit_label, :class => 'create' %>
+        
+        <% if !@pet.new_record? %>
+        <%= link_to raw('<input class="delete red" type="button" value="Delete" />'), pet_path(@pet),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, html: :ok %>
+        <% end %>
+    </td>
+</tr>
+
+</table>
+<script type="text/javascript">
+/* <![CDATA[ */
+$(document).ready(function(){
+    // your code...
+    $("input[type=file]").nicefileinput();
+    
+});
+/* ]]> */
+    
+    
+$(document).ready(function() {
+    if ($('textarea').length > 0) {
+        var data = $('textarea');
+        $.each(data, function(i) {
+            CKEDITOR.replace(data[i].id);
+        });
+    }
+});
+</script>
+
+<% end %>

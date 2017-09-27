@@ -1,0 +1,129 @@
+<div id="black-featured">
+<div id="black-featured-inner">
+    
+
+    <a href="<%=@left_featured_post.nil? ? "" : post_path(@left_featured_post)%>#post-date">
+    <div id="left_area">
+        <% if !@left_featured_post.nil? %>
+        <img src="<%=@left_featured_post.featured_image.url %>" />
+        <% end %>
+    </div>
+    </a>
+    <div id="right_area">
+<!-- RIGHT TOP-->
+
+        <a href="<%=@right_top_featured_post.nil? ? "" : post_path(@right_top_featured_post)%>#post-date">
+        <div id="top_area">
+            <% if !@right_top_featured_post.nil? %>
+            <img src="<%=@right_top_featured_post.featured_image.url %>" />
+            <% end %>
+
+<!-- END RIGHT TOP-->
+        </div>
+        </a>
+        <div id="bottom_area">
+<!-- RIGHT BOTTOM LEFT -->
+
+            <a href="<%=@right_bottom_left_featured_post.nil? ? "" : post_path(@right_bottom_left_featured_post)%>#post-date">
+            <div id="bottom_left_area">
+                <% if !@right_bottom_left_featured_post.nil? %>
+                <img src="<%=@right_bottom_left_featured_post.featured_image.url %>" />
+                <% end %>
+
+<!-- END RIGHT BOTTOM LEFT-->
+            </div>
+            </a>
+<!-- RIGHT BOTTOM RIGHT -->
+
+            <a href="<%=@right_bottom_right_featured_post.nil? ? "" : post_path(@right_bottom_right_featured_post)%>#post-date">
+            <div id="bottom_right_area">
+                <% if !@right_bottom_right_featured_post.nil? %>
+                <img src="<%=@right_bottom_right_featured_post.featured_image.url %>" />
+                <% end %>
+
+<!-- END RIGHT BOTTOM RIGHT-->
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="clearer"></div>
+</div>
+</div><!--end of black-featured-->
+
+<div class="block-area" id="new_posts">
+    <div class="header">最新文章</div>
+    <ul class="list">
+
+        <% @posts.each do |post| %>
+        <a href="<%=post_path(post.id)%>#post-date">
+        <li class="post">
+            <div class="img-wrapper">
+                <img src="<%=post.small_image.url %>" />
+            </div>
+            <div class="content-wrapper">
+
+                <div class="title">
+                    <%=post.title%>
+                </div>
+                <div class="info">
+                    <div class="date-box">
+                        <%=post.created_at.strftime("%b.%d")%>
+                    </div>
+                    <div class="postedby">
+                        POSTED BY <%=post.user.name%>
+                    </div>
+                    <div class="clearer"></div></div>
+                <div class="detail">
+                    <%=truncate(sanitize(post.content, :tags=>[]), :length => 110, :omission => '...')%>
+                </div>
+            </div>
+            <div class="clearer"></div>
+        </li><!--end of post-->
+        </a>
+        <% end %>
+        
+        <li class="clearer"></li>
+
+    </ul>
+</div><!--end of new_posts-->
+
+<div class="block-area" id="pets">
+    <div class="header">棋寵評價</div>
+    <ul class="list">
+        
+        <% @pets.each do |pet| %>
+        <a href="<%=pet_path(pet.number)%>#profile">
+        <li class="item">
+            <div class="img-wrapper">
+                <% if pet.circle_image.exists? %>
+                <img src="<%=pet.circle_image.url %>" />
+                <% else %>
+                <div class="circle-cover"></div>
+                <%= image_tag "pets/icon/"+get_str_key(pet.number)+".png" %>
+                <% end %>
+            </div>
+            <div class="content-wrapper">
+            <div class="content-inner">
+                <div class="name">
+                    <%=pet.name%>
+                </div>
+                <div class="rating">
+                    <%=pet.ranking_total%>
+                </div>
+            </div>
+            </div>
+            <div class="clearer"></div>
+        </li>
+        </a>
+        <% end %>
+        
+    </ul>
+</div><!--end of rating-->
+
+<div class="block-area" id="ads1">
+    <div id="ads1-wrapper">
+        <div id="ads-example">Ads 1</div>
+    </div>
+</div><!--end of ads1-->
+
+<div class="clearer"></div>

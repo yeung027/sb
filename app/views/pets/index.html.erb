@@ -1,0 +1,116 @@
+<section class="pets-outer" itemscope itemtype="https://schema.org/MobileApplication">
+    <div style="display:none" itemprop="name">Summons Board</div>
+    <div style="display:none" itemprop="operatingSystem">IOS,Android</div>
+    <div style="display:none" itemprop="applicationCategory">mobile game</div>
+    <div style="display:none" itemprop="image">http://sb-heyhei.rhcloud.com/assets/posts/post-top-banner.png</div>
+    <div style="display:none" itemprop="producer">GungHo</div>
+    <div style="display:none" itemprop="about">Summons Board 召喚圖版 圖鑑</div>
+<div class="pets-top-banner">
+</div>
+<div class="pets-wrapper">
+    
+    <div class="pets-content-wrapper">
+    <div class="search-form-wrapper">
+        <%= form_for :pet, url: search_pets_path, method: :post, :html => {:class => "pets_search_form"} do |f| %>
+        <div class="number-search-box-wrapper">
+            <div class="number-search-box-inner">
+                <%= f.text_field :number, :class => "", placeholder: "棋寵編號或名稱" %>
+                <%= f.submit "GO", :class => 'submit' %>
+                <div class="clearer"></div>
+            </div>
+        </div><!--end of number-search-box-wrapper-->      
+        <div class="search-form-graybox-wrapper" id="search-form-graybox">
+            
+            <div class="search-form-graybox-inner">
+                <div class="mask">
+                    <div class="mask-inner">
+                        <div class="mask-content">
+                            <div class="spinner">
+                              <div class="bounce1"></div>
+                              <div class="bounce2"></div>
+                              <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+                <div id="pet_attribute_wrapper" class="field_wrapper">
+                    <%= f.hidden_field :pet_attribute, :class=> "hidden_value" %>
+                    <div class="label_wrapper">屬性</div>
+                    <ul class="boxs_wrapper">
+                        <li class="item" data-search-value="火">火</li>
+                        <li class="item" data-search-value="水">水</li>
+                        <li class="item" data-search-value="木">木</li>
+                        <li class="item" data-search-value="光">光</li>
+                        <li class="item" data-search-value="闇">闇</li>
+                        <li class="clearer"></li>
+                    </ul>
+                    <div class="clearer"></div>
+                </div><!--end of pet_attribute_wrapper-->
+                
+                 <div id="type1_wrapper" class="field_wrapper">
+                    <%= f.hidden_field :type1, :class=> "hidden_value" %>
+                    <div class="label_wrapper">類型</div>
+                    <ul class="boxs_wrapper">
+                        <li class="item" data-search-value="バランス">平衡</li>
+                        <li class="item" data-search-value="攻撃">攻撃</li>
+                        <li class="item" data-search-value="HP">HP</li>
+                        <li class="item" data-search-value="進化用">進化用</li>
+                        <li class="item" data-search-value="育成用">育成用</li>
+                        <li class="item" data-search-value="副属性用">副属性用</li>
+                        <li class="item" data-search-value="売却用">売却用</li>
+                        <li class="clearer"></li>
+                    </ul>
+                    <div class="clearer"></div>
+                </div><!--end of type1_wrapper-->
+                
+                <div id="none_wrapper" class="field_wrapper">
+                    <div class="label_wrapper"></div>
+                    <ul class="boxs_wrapper">
+                        <li class="clearer"></li>
+                    </ul>
+                    <div class="clearer"></div>
+                </div><!--end of none_wrapper-->
+                
+                <div id="type2_wrapper" class="field_wrapper">
+                    <%= f.hidden_field :type2, :class=> "hidden_value" %>
+                    <div class="label_wrapper">類型2</div>
+                    <ul class="boxs_wrapper">
+                        <li class="item" data-search-value="ディフェンス">防禦</li>
+                        <li class="item" data-search-value="カウンター">反擊</li>
+                        <li class="item" data-search-value="アシスト">副助</li>
+                        <li class="item" data-search-value="アタック">拳頭</li>
+                        <li class="item" data-search-value="スキルアタック">技能攻擊</li>
+                        <li class="clearer"></li>
+                    </ul>
+                    <div class="clearer"></div>
+                </div><!--end of type2_wrapper-->
+                
+                
+                
+                
+            </div><!--end of search-form-graybox-inner-->
+        </div><!--end of search-form-graybox-wrapper-->
+    <% end %>
+    </div><!-- end of search-form-wrapper-->
+        
+    
+    <div class="pets_list_wrapper">
+    <div class="pets_list_inner">
+        <ul class="pets_list">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            <li class="clearer"></li>
+        </ul>
+    </div>
+    </div><!-- end of pets_list_wrapper-->
+        
+        
+    </div><!-- end of pets-content-wrapper-->
+    
+    
+</div><!--end of pets-wrapper-->
+</section>

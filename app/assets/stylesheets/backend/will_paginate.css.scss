@@ -1,0 +1,54 @@
+.pagination
+{
+    margin-top:10px;
+}
+
+.pagination .previous_page .prev, .pagination .next_page .next
+{
+    float:left;
+    background-repeat: no-repeat;
+    height:31px;
+    width:27px;
+    display: inline-block;
+}
+.pagination .previous_page .prev
+{
+    background-image: image-url("admin/pagination/prev.png");
+}
+.pagination .next_page .next
+{
+    background-image: image-url("admin/pagination/next.png");
+}
+.pagination .previous_page.disabled .prev
+{
+    background-image: image-url("admin/pagination/disabled_prev.png");
+}
+.pagination .next_page.disabled .next
+{
+    background-image: image-url("admin/pagination/disabled_next.png");
+}
+.pagination .current, .pagination a
+{
+    float:left;
+    font-size: 20px;
+    line-height: 31px;
+    //padding:0 5px;
+}
+.pagination a
+{
+    color:#000;
+    text-decoration: none;
+}
+.pagination a:hover
+{
+    color:#ecb847;
+}
+.pagination .current
+{
+    font-style: normal;
+    color: #9fa5a2;
+}
+.pagination .current, .pagination a:not(.previous_page):not(.next_page)
+{
+    margin:0 4px;
+}

@@ -1,0 +1,23 @@
+<h1 class="backend_h1 pets_header color">Pet List</h1>
+<div class="list-wrapper">
+    <% (1..@max_number).each do |i| %>
+    <div class="item">
+        
+        <% pet  = Pet.find_by_number(i)  %>
+        <% if pet.nil? %>
+            <a href="<%=new_pet_path({"number" => i})%>">
+                <div class="not-found">Not Found(<%=i%>)</div>
+            </a>
+        <% elsif pet.profile_image.exists? %>
+            <a href="<%=edit_pet_path(pet)%>">
+                <img src="<%=pet.profile_image.url%>" />
+            </a>
+        <% else %>
+            <a href="<%=edit_pet_path(pet)%>">
+                <%= image_tag "pets/icon/"+get_str_key(pet.number)+".png" %>
+            </a>
+        <%end%>
+    </div>
+    <%end%>
+    <div class="clearer"></div>
+</div>

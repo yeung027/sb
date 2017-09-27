@@ -1,0 +1,99 @@
+<% if @post.errors.any? %>
+<ul class="error_wrapper">
+<% @post.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+
+<%= form_for :post, url: @submit_path, method: @method, :html => {:class => "admin_form"} do |f| %>
+<table border="0" cellspacing="0" cellpadding="0" class="form_table">
+<tr>
+    <td class="label_td">
+        Title:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :title, :class => @post.errors.any? && @post.errors[:title].any? ? "error" : "" %>
+    </td>
+</tr>
+<tr>
+    <td class="label_td valign-top">
+        Content:
+    </td>
+    <td class="value_td">
+        <%= f.text_area :content, :rows => 10, :class => @post.errors.any? && @post.errors[:content].any? ? "error" : "" %>
+    </td>
+</tr>
+
+<tr>
+    <td class="label_td">
+        Featured:
+    </td>
+    <td class="value_td">
+        <%= f.select :featured, options_for_select(Post.featured_types, @post.featured) %>
+    </td>
+</tr>
+    
+<tr>
+    <td class="label_td <%= @post.small_image.exists? ? 'valign-top' : '' %>">
+        Small Image:
+    </td>
+    <td class="value_td">
+        <% if @post.small_image.exists? %>
+        <div class="attachment-wrapper">
+            <img src="<%=@post.small_image.url() %>" />
+        </div>
+        <% end %>
+        <%= f.file_field :small_image, :class => @post.errors.any? && @post.errors[:small_image].any? ? "error" : "" %>
+        <% if @post.small_image.exists? %><div style="height:50px;"></div><% end %>
+    </td>
+</tr>
+
+<tr>
+    <td class="label_td <%= @post.featured_image.exists? ? 'valign-top' : '' %>">
+        Featured Image:
+    </td>
+    <td class="value_td">
+        <% if @post.featured_image.exists? %>
+        <div class="attachment-wrapper">
+            <img src="<%=@post.featured_image.url() %>" />
+        </div>
+        <% end %>
+        <%= f.file_field :featured_image, :class => @post.errors.any? && @post.errors[:featured_image].any? ? "error" : "" %>
+    </td>
+</tr>
+    
+<tr>
+    <td class="span_td" colspan="2">
+            <input class="back gray" type="button" value="Back" onclick="window.location='<%=root_path%>'" />
+        <%= f.submit @submit_label, :class => 'create' %>
+        
+        <% if !@post.new_record? %>
+        <%= link_to raw('<input class="delete red" type="button" value="Delete" />'), post_path(@post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, html: :ok %>
+        <% end %>
+    </td>
+</tr>
+
+</table>
+<script type="text/javascript">
+/* <![CDATA[ */
+$(document).ready(function(){
+    // your code...
+    $("input[type=file]").nicefileinput();
+    
+});
+/* ]]> */
+
+$(document).ready(function() {
+    if ($('textarea').length > 0) {
+        var data = $('textarea');
+        $.each(data, function(i) {
+            CKEDITOR.replace(data[i].id);
+        });
+    }
+});
+</script>
+
+<% end %>

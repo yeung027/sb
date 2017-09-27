@@ -1,0 +1,60 @@
+<% if @user.errors.any? %>
+<ul class="error_wrapper">
+<% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+
+<%= form_for :user, url: @submit_path, method: @method, :html => {:class => "admin_form"} do |f| %>
+<table border="0" cellspacing="0" cellpadding="0" class="form_table">
+<tr>
+    <td class="label_td">
+        Name:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :name, :class => @user.errors.any? && @user.errors[:name].any? ? "error" : "" %>
+    </td>
+</tr>
+<tr>
+    <td class="label_td">
+        Login:
+    </td>
+    <td class="value_td">
+        <%= f.text_field :login, :class => @user.errors.any? && @user.errors[:login].any? ? "error" : "" %>
+    </td>
+</tr>
+<tr>
+    <td class="label_td">
+        Password:
+    </td>
+    <td class="value_td">
+        <%= f.password_field :password, :class => @user.errors.any? && @user.errors[:password].any? ? "error" : "" %>
+    </td>
+</tr>
+<tr>
+    <td class="label_td">
+        Confirm Password:
+    </td>
+    <td class="value_td">
+        <%= f.password_field :confirm_password, :class => @user.errors.any? && @user.errors[:confirm_password].any? ? "error" : "" %>
+    </td>
+</tr>
+<tr>
+    <td class="span_td" colspan="2">
+            <input class="back gray" type="button" value="Back" onclick="window.location='<%=users_path%>'" />
+        <%= f.submit @submit_label, :class => 'create' %>
+    </td>
+</tr>
+<!--<tr>
+    <td class="span_td" colspan="2">
+        <div class="label_wrapper">
+            Password:
+        </div>
+        <%#= f.text_area :password %>
+    </td>
+</tr>-->
+</table>
+
+
+<% end %>

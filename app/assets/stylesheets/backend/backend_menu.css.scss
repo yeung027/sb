@@ -1,0 +1,119 @@
+#backend_menu
+{
+    width:214px;
+    height:100%;
+    background-color: #343338;
+    text-align: center;
+    float:left;
+}
+#backend_menu #user_header
+{
+    width:214px; 
+    text-align: center;
+    padding:24px 0 0 0;
+}
+#backend_menu #user_header .box
+{
+    width:214px;  
+    //border:red 1px solid;
+    text-align: center;
+    margin:0 0 54px 0;
+}
+#backend_menu #user_header .box #backend_menu_photo
+{
+    background-image: image-url("admin/photo/backend_left_photo.png");
+    width:75px;
+    height:75px;
+    display: inline-block;
+}
+#backend_menu #user_header .box #user_name
+{
+    color:#fff;
+    padding:6px 0 0 0;
+}
+#backend_menu #user_header .box #user_name .drow_arrow
+{
+    width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 7px solid #fff;
+    display: inline-block;
+}  
+
+#backend_menu .sep1, #backend_menu .sep2
+{
+    height:2px;
+    width:100%;
+}
+#backend_menu .sep1
+{
+    background-color: #2b2a2f;
+}
+#backend_menu .sep2
+{
+    background-color: #403f44;
+}
+#backend_menu .item
+{
+    height:36px;
+    line-height: 40px;
+    text-align: left;
+    
+    background-repeat: no-repeat;
+    background-position: 31px center;
+    padding-left: 65px;
+}
+#backend_menu .item a
+{
+    color:#fff;
+    text-decoration: none;
+}
+#backend_menu .item.users
+{
+    background-image: image-url("admin/backend_menu/users.png");
+}
+#backend_menu .item.posts
+{
+    background-image: image-url("admin/backend_menu/posts.png");
+}
+#backend_menu .item.pets
+{
+    background-image: image-url("admin/backend_menu/pets.png");
+}
+#backend_menu .sub_menu
+{
+    background-color: #2b2a2f;
+    padding:15px 0 15px 64px;
+    text-align: left;
+    color:#fff;
+}
+#backend_menu .sub_menu ul :not(:first-child)
+{
+    margin:16px 0 0 0;
+}
+
+
+
+body.admin_pets #backend_menu li.item.pets a, body.pets #backend_menu li.item.pets a, body.posts #backend_menu li.item.posts a, body.users #backend_menu li.item.users a
+{
+    color:#00af62;
+}
+body.admin_pets #backend_menu #pet_sub_menu .sub_menu li a, body.pets #backend_menu #pet_sub_menu .sub_menu li a, body.posts #backend_menu #post_sub_menu .sub_menu li a, body.users #backend_menu #user_sub_menu .sub_menu li a
+{
+    color:#00af62;
+    text-decoration: none;
+}
+.sub_menu_wrapper
+{
+    display:none;
+} 
+body.users #user_sub_menu, body.posts #post_sub_menu, body.pets #pet_sub_menu, body.admin_pets #pet_sub_menu
+{
+    display:block;
+}
+#backend_menu .sub_menu ul li a:hover
+{
+    color:#ff5a00 !important;
+    text-decoration: none;
+}

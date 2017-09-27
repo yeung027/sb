@@ -1,0 +1,388 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*------------------------------------------------*/
+/*-------------------[Loading Icon]---------------*/
+/*------------------------------------------------*/    
+.spinner {
+  margin: 0px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+
+
+
+
+body.pets.index
+{
+.pets-top-banner
+{
+    width:1280px;
+    height:435px;
+    background-image: asset-url("posts/post-top-banner.png", image);
+}
+
+.pets-outer
+{
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
+.pets-wrapper
+{
+    background-color: #fff;
+    width:1280px;
+    min-height:435px;
+    text-align: left;
+}
+
+.pets-wrapper .pets-content-wrapper
+{
+    width:1280px;
+    text-align: center;
+}
+      
+    
+.pets-wrapper .pets-content-wrapper .search-form-wrapper
+{
+    width:1280px;
+    #border:blue 1px solid;   
+}
+
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .number-search-box-wrapper
+{
+    position: absolute;
+    margin:-32px 0 0 0;
+    width:1280px;
+    text-align: center;
+    z-index:1;
+}
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .number-search-box-wrapper .number-search-box-inner
+{
+    position: relative;
+    width:436px;
+    height:64px;
+    display: inline-block;
+    border-radius: 10px;
+    border:#ffc617 6px solid;
+    padding: 0 0 0 0;
+    text-align: left;
+} 
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .number-search-box-wrapper .number-search-box-inner input[type="text"]
+{
+    float: left;
+    width:348px;
+    height:56px;
+    line-height: 56px;
+    border-radius: 4px 0px 0px 4px;
+    margin: 0;
+    background-color: #fff;
+    font-family: 'Raleway', Arial, sans-serif;
+    padding:3px 7px;
+    font-size:23px;
+} 
+    
+.number-search-box-inner input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  line-height: normal;
+}
+.number-search-box-inner input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+  line-height: normal;
+}
+.number-search-box-inner input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+  line-height: normal;
+}
+.number-search-box-inner input[type="text"]:-moz-placeholder { /* Firefox 18- */
+  line-height: normal;
+}    
+
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .number-search-box-wrapper .number-search-box-inner input[type="submit"]
+{
+    float: left;
+    width:74px;
+    height:100%;
+    border-radius: 0px 4px 4px 0px;
+    padding:0;
+    margin: 0;
+    background-color: #9ee82a;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size:23px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}  
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .number-search-box-wrapper .number-search-box-inner input[type="submit"]:hover
+{
+    color:#ff4707;
+}   
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .number-search-box-wrapper .number-search-box-inner input[type="submit"].disabled
+{
+    background-color: #cbcbcb;
+    cursor: default;
+}    
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .number-search-box-wrapper .number-search-box-inner input[type="submit"].disabled:hover
+{
+    color:#0a0a0a;
+} 
+    
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .search-form-graybox-wrapper
+{
+    width:1280px;
+    #border:red 1px solid; 
+    text-align: center;
+}
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .search-form-graybox-wrapper .search-form-graybox-inner
+{
+    width:975px;
+    min-height: 140px;
+    display: inline-block;
+    #border:orange 3px solid; 
+    background-color: #efefef;
+    padding:55px 30px 30px 30px;
+    text-align: left;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-box-shadow: 0px 0px 26px -5px rgba(133,133,133,1);
+    -moz-box-shadow: 0px 0px 26px -5px rgba(133,133,133,1);
+    box-shadow: 0px 0px 26px -5px rgba(133,133,133,1);
+}   
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .search-form-graybox-wrapper .search-form-graybox-inner .mask
+{
+    position: absolute;
+    width:975px;
+    min-height: 140px;
+    display: none;
+    #border:orange 3px solid; 
+    background-color: #efefef;
+    padding:55px 30px 30px 30px;
+    text-align: left;
+    border-radius: 0px 0px 10px 10px;
+    z-index: 0;
+    margin:-55px 0 0 -30px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    text-align: center;
+    vertical-align: middle;
+}
+    
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .search-form-graybox-wrapper .search-form-graybox-inner .mask-inner
+{
+    display: table;
+    width:100%;
+    min-height:140px;
+}
+    
+.pets-wrapper .pets-content-wrapper .search-form-wrapper .search-form-graybox-wrapper .search-form-graybox-inner .mask-inner .mask-content
+{
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.search-form-graybox-inner .field_wrapper
+{
+    float:left;
+    width:485px;
+    #border:red 1px solid;
+}
+.search-form-graybox-inner .field_wrapper .label_wrapper, .search-form-graybox-inner .field_wrapper ul.boxs_wrapper
+{
+    float:left;
+    font-family: "LiHei Pro", "Tahoma";
+}   
+.search-form-graybox-inner .field_wrapper .label_wrapper
+{
+    color: #0a0a0a;
+    margin:0 10px 0 0;
+    min-height:36px;
+    width:100px;
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 100;
+    vertical-align: top;
+    #border:red 1px solid;
+}    
+.search-form-graybox-inner .field_wrapper ul.boxs_wrapper
+{
+    #border:blue 1px solid;
+    width:370px;
+}     
+.search-form-graybox-inner .field_wrapper ul.boxs_wrapper li.item
+{
+    float:left;
+    background-color: #fffbdf;
+    padding:5px;
+    margin:0 0 10px 0;
+    height:20px;
+    line-height: 20px;
+    margin-right: 10px;
+    border:#c6c6c6 3px solid;
+    cursor: pointer;
+}     
+.search-form-graybox-inner .field_wrapper ul.boxs_wrapper li.item:hover
+{
+    color:#ff5a00;
+}     
+.search-form-graybox-inner .field_wrapper ul.boxs_wrapper li.item.selected
+{
+    background-color: #fff196;
+    border:#ffc617 3px solid;
+}     
+
+    
+.pets-content-wrapper .pets_list_wrapper
+{
+    #border:red 1px solid;  
+    padding:30px 30px 30px 30px;
+}
+.pets-content-wrapper .pets_list_wrapper .pets_list_inner
+{
+    text-align: center;
+}  
+    
+.pets-content-wrapper .pets_list_wrapper ul.pets_list li.item
+{
+    float:left;
+    width:108px;
+    height:108px;
+    margin:0 10px 10px 0;
+} 
+.pets-content-wrapper .pets_list_wrapper ul.pets_list li.item .img-wrapper
+{
+    width:108px;
+    height:108px;
+}
+.pets-content-wrapper .pets_list_wrapper ul.pets_list li.item img
+{
+    opacity: 0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+}   
+
+.pets-content-wrapper .pets_list_wrapper ul.pets_list .spinner
+{
+    margin-top:100px;
+}
+    
+@media only screen and ( min-width: 1px ) and ( max-width: 1300px ) {
+body:not(.android){ 
+.pets-outer .pets-top-banner
+{
+    vertical-align: bottom;
+    display: table-cell;
+    text-align: left;
+    width: 100vw;
+    height: calc(100vw /2.9);
+    background-image: asset-url("posts/post-top-banner.png", image);
+    background-size:contain;
+    background-repeat: no-repeat;
+}  
+.search-form-graybox-wrapper
+{
+    #border:red 1px solid;
+    width: 100vw !important;
+}
+.search-form-graybox-inner
+{
+    #border:cyan 3px solid;
+    width: calc(100vw * 0.9)!important;
+    margin-top:-5px;
+}   
+    
+.number-search-box-wrapper
+{
+    #border:red 1px solid;
+    width: 100vw !important;
+}   
+    
+.search-form-graybox-inner .field_wrapper
+{
+    #width: calc((100vw * 0.9) * 0.4)!important;
+    #border:black 1px solid;
+}   
+.search-form-graybox-inner .mask
+{
+    #border:cyan 3px solid;
+    width: calc(100vw * 0.9)!important;
+    #display:block;
+}
+.pets-content-wrapper .pets_list_wrapper
+{
+    #border:red 1px solid;  
+    width: calc((100vw * 0.95))!important;
+}
+.pets-content-wrapper .pets_list_inner
+{
+    #border:cyan 1px solid;  
+}    
+
+.pets-content-wrapper ul.pets_list
+{
+    #border:orange 3px solid;   
+}
+.pets-content-wrapper .pets_list_wrapper ul.pets_list li.item
+{
+    display: inline-block;
+    float:none;
+}  
+
+}
+}//end of media 1300
+
+@media only screen and ( min-width: 1px ) and ( max-width: 1077px ) {
+body:not(.android){ 
+   .pets-wrapper .pets-content-wrapper .search-form-wrapper .search-form-graybox-wrapper .search-form-graybox-inner .mask
+    {
+        position: absolute;
+        width:975px;
+        height: 183px;
+        #border:red 1px solid;
+    } 
+    .pets-wrapper .pets-content-wrapper .search-form-wrapper .search-form-graybox-wrapper .search-form-graybox-inner .mask-inner
+    {
+        height: 183px;
+    }
+    #none_wrapper
+    {
+        display:none;
+    }
+}
+}//end of media 1077
+
+}//end of body.pets.index
+
+

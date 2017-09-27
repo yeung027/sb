@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backend</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel='stylesheet' id='serene-fonts-css'  href='http://fonts.googleapis.com/css?family=Raleway:400,200,100,500,700,800,900&#038;subset=latin,latin-ext' type='text/css' media='all' />
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="backend <%=params[:controller].gsub('/', '_')%> <%=params[:action]%>">
+<table id="layout_table" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td id="backend_menu_container">
+            <%= render "shared/backend/left_menu" %>
+        </td>
+        <td id="backend_container">
+            <%= yield %>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    /*$(document).ready(function() {
+        if ($('textarea').length > 0) {
+            var data = $('textarea');
+            $.each(data, function(i) {
+                CKEDITOR.replace(data[i].id);
+            });
+        }
+    });*/
+</script>
+</body>
+</html>

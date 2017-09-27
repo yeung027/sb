@@ -1,0 +1,507 @@
+<%#=@os%>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "<%=@pet.name%>"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "<%=@pet.ranking_total%>",
+    "bestRating": "10"
+  }
+}
+</script>
+
+<section class="post-outer pet" itemscope itemtype="https://schema.org/Person">
+<div class="post-top-banner">
+    <div class="profile-box-wrapper" id="profile">
+        <div class="profile-box-inner">
+            <% if @pet.profile_image.exists? %>
+            <img src="<%=@pet.profile_image.url %>" itemprop="image" />
+            <% else %>
+            <%= image_tag "pets/icon/"+get_str_key(@pet.number)+".png", :itemprop=>"image" %>
+            <% end %>
+        </div>
+    </div>
+</div>
+<div class="profile-detail-wrapper">
+    <div itemprop="name" class="name">
+        <%=@pet.name%>
+        <% if !@pet.chinese_name.nil? && !@pet.chinese_name.empty? %>
+        (<%=@pet.chinese_name%>)
+        <% end %>
+    </div>
+</div>
+<div class="post-wrapper">
+    <div class="post-content-wrapper" id="main-content">
+        <div class="post-content-leftarea">
+            <div class="skill-green-box">
+                <div class="box-title">主動技</div>
+                <table cellpadding="0" cellspacing="0" class="box-table">
+                    <tr>
+                        <td class="box-content">
+                            <div class="box-content-wrapper">
+                                <div class="box-content-inner" itemprop="skill">
+                                    <%=@pet.skill.nil? || @pet.skill.empty? ? "沒有" : @pet.skill.html_safe%>
+                                </div>
+                            </div>
+                        </td>
+                        <% if(@pet.skill.nil? || @pet.skill_range.nil? || @pet.skill_range == Pet.skill_range_types["None"]) %>
+                        <% else %>
+                        <td class="box-skill-range">
+                            <div class="box-skill-range-inner">
+                                <%= render "pets/show_skill_range" %>
+                            </div>
+                        </td>
+                        <% end %>
+                    </tr>
+                </table>
+            </div><!--end of green box-->
+            
+            <div class="radius-box leader-skill-box">
+                <div class="box-title">隊長技</div>
+                <div class="box-content">
+                    <div class="box-content-inner" itemprop="leader-skill">
+                        <%=@pet.leader_skill.nil? || @pet.leader_skill.empty? ? "沒有" : @pet.leader_skill.html_safe%>
+                    </div>
+                </div>
+            </div> <!--end of radius box-->
+            
+            <div class="radius-box pet-box" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                <div class="box-title">
+                    <div class="label">評分</div>
+                    <div class="value"><span itemprop="ratingCount"><%=@pet.rankings.count%></span>個評分</div>
+                </div>
+                
+                <div class="box-content">
+                    <div class="box-content-inner">
+                        
+                        <ul class="pet-part-list">
+                            <li class="pet-part-wapper">
+                                <div class="pet-part-title">HP</div>
+                                <div class="pet-part-mark"><%=@pet.ranking_hp%></div>
+                                <div class="clearer"></div>
+                                <div class="pet-bar">
+                                    <div class="green-bar" style="width:<%=@pet.ranking_hp*10%>%;"></div>
+                                </div>
+                            </li><!-- enf of pet-part-wapper-->
+                    
+                            <li class="pet-part-wapper">
+                                <div class="pet-part-title">攻擊</div>
+                                <div class="pet-part-mark"><%=@pet.ranking_attack%></div>
+                                <div class="clearer"></div>
+                                <div class="pet-bar">
+                                    <div class="green-bar" style="width:<%=@pet.ranking_attack*10%>%;"></div>
+                                </div>
+                            </li><!-- enf of pet-part-wapper-->
+                            
+                            <li class="pet-part-wapper">
+                                <div class="pet-part-title">能力</div>
+                                <div class="pet-part-mark"><%=@pet.ranking_ability%></div>
+                                <div class="clearer"></div>
+                                <div class="pet-bar">
+                                    <div class="green-bar" style="width:<%=@pet.ranking_ability*10%>%;"></div>
+                                </div>
+                            </li><!-- enf of pet-part-wapper-->
+                            
+                            <li class="pet-part-wapper">
+                                <div class="pet-part-title">隊長技</div>
+                                <div class="pet-part-mark"><%=@pet.ranking_leader_skill%></div>
+                                <div class="clearer"></div>
+                                <div class="pet-bar">
+                                    <div class="green-bar" style="width:<%=@pet.ranking_leader_skill*10%>%;"></div>
+                                </div>
+                            </li><!-- enf of pet-part-wapper-->
+                            
+                            <li class="pet-part-wapper">
+                                <div class="pet-part-title">技能威力／效果</div>
+                                <div class="pet-part-mark"><%=@pet.ranking_skill%></div>
+                                <div class="clearer"></div>
+                                <div class="pet-bar">
+                                    <div class="green-bar" style="width:<%=@pet.ranking_skill*10%>%;"></div>
+                                </div>
+                            </li><!-- enf of pet-part-wapper-->
+                            
+                            <li class="pet-part-wapper">
+                                <div class="pet-part-title">技能回合</div>
+                                <div class="pet-part-mark"><%=@pet.ranking_skill_round%></div>
+                                <div class="clearer"></div>
+                                <div class="pet-bar">
+                                    <div class="green-bar" style="width:<%=@pet.ranking_skill_round*10%>%;"></div>
+                                </div>
+                            </li><!-- enf of pet-part-wapper-->
+                            
+                            <li class="pet-part-wapper">
+                                <div class="pet-part-title">箭頭</div>
+                                <div class="pet-part-mark"><%=@pet.ranking_arrow%></div>
+                                <div class="clearer"></div>
+                                <div class="pet-bar">
+                                    <div class="green-bar" style="width:<%=@pet.ranking_arrow*10%>%;"></div>
+                                </div>
+                            </li><!-- enf of pet-part-wapper-->
+                        </ul>
+                        <div class="circle-bar-wrapper">
+                            <div id="pet-circle-bar">
+                                <div id="pet-circle-bar-textwrapper" itemprop="ratingValue"><%=@pet.ranking_total%></div>
+                            </div>
+                            <div itemprop="worstRating" style="display:none;">0</div>
+                            <div itemprop="bestRating" style="display:none;">10</div>
+                            <script>
+                                $('#pet-circle-bar').circleProgress({
+                                    value: <%=@pet.ranking_total/10%>,
+                                    startAngle: 67.5,
+                                    size: 111,
+                                    fill: {color: "#8dc153"},
+                                    thickness: 15
+                                });
+                                
+                                $(window).scroll(function() {
+                                    circle_bar_is_appear_checker();
+                                });
+                                
+                                $( document ).ready(function() {
+                                    circle_bar_is_appear_checker();
+                                });
+                                
+                                var circle_bar_is_redrawed  = false;
+                                function circle_bar_is_appear_checker()
+                                {
+                                    if(circle_bar_is_redrawed) return;
+                                    if(isElementVisible($('#pet-circle-bar')))
+                                    {
+                                        $('#pet-circle-bar').circleProgress('redraw'); 
+                                        circle_bar_is_redrawed  = true;
+                                    }
+                                }
+                            </script>
+                        </div>
+                        <div class="total-mark-label-wrapper">
+                            總分：
+                        </div>
+                        <div class="visitor-post-botton-wrapper">
+                            <div class="visitor-post-botton-inner">
+                                <div id="visitor-post-botton">
+                                    我也評分
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearer"></div>
+                    </div><!--end of box-content-inner-->
+                </div>
+            </div> <!--end of radius box-->
+            
+            <div class="radius-box detail-box" itemprop="before-evolution">
+                <div class="box-title">進化前</div>
+                <div class="box-content">
+                    <div class="box-content-inner">
+                        <% if !@before_evolution.nil? %>
+                        <a href="<%=pet_path(@before_evolution.number)%>">
+                            <div class="detail-icon-wrapper">
+                            <div class="detail-icon-inner">
+                                <div class="image-wrapper">
+                                    <% if @before_evolution.profile_image.exists? %>
+                                        <img src="<%=@before_evolution.profile_image.url %>" itemprop="image" />
+                                    <% else %>
+                                        <%= image_tag "pets/icon/"+get_str_key(@before_evolution.number)+".png", :itemprop=>"image" %>
+                                    <% end %>
+                                </div>
+                                <div class="text-wrapper"><%=@before_evolution.name%></div>
+                                <div class="clearer"></div>
+                                
+                            </div>
+                            </div>
+                            </a>
+                        <% else %>
+                            沒有
+                        <% end %>
+                    </div><!--end of box-content-inner-->
+                </div>
+            </div> <!--end of radius box 進化前-->
+            
+            
+            <div class="radius-box evolution-box" itemprop="evolution">
+                <div class="box-title">進化</div>
+                <div class="box-content">
+                    <div class="box-content-inner">
+                        <% if !@after_evolution.nil? %>
+                            <ul class="evolution-list">
+                                <li>
+                                    <% if @pet.profile_image.exists? %>
+                                        <img src="<%=@pet.profile_image.url %>" itemprop="image" />
+                                    <% else %>
+                                        <%= image_tag "pets/icon/"+get_str_key(@pet.number)+".png", :itemprop=>"image" %>
+                                    <% end %>
+                                    
+                                    
+                                    
+                                </li>
+                                <% if(!@pet.material_1_pet.nil?) %>
+                                
+                                <li class="add"></li>
+                                <li class="material">
+                                    
+                                    <a href="<%=pet_path(get_str_key(@pet.material_1))%>">
+                                    <% if @pet.material_1_pet.profile_image.exists? %>
+                                        <img src="<%=@pet.material_1_pet.profile_image.url %>" itemprop="image" />
+                                    <% else %>
+                                        <%= image_tag "pets/icon/"+get_str_key(@pet.material_1_pet.number)+".png", :itemprop=>"image" %>
+                                    <% end %>
+                                    </a>
+                                </li>
+                                <% end %>
+                                <% if(!@pet.material_2_pet.nil?) %>
+                                <li class="material">
+                                    <a href="<%=pet_path(get_str_key(@pet.material_2))%>">
+                                    <% if @pet.material_2_pet.profile_image.exists? %>
+                                        <img src="<%=@pet.material_2_pet.profile_image.url %>" itemprop="image" />
+                                    <% else %>
+                                        <%= image_tag "pets/icon/"+get_str_key(@pet.material_2_pet.number)+".png", :itemprop=>"image" %>
+                                    <% end %>
+                                    </a>
+                                </li>
+                                <% end %>
+                                <% if(!@pet.material_3_pet.nil?) %>
+                                <li class="material">
+                                    <a href="<%=pet_path(get_str_key(@pet.material_3))%>">
+                                    <% if @pet.material_3_pet.profile_image.exists? %>
+                                        <img src="<%=@pet.material_3_pet.profile_image.url %>" itemprop="image" />
+                                    <% else %>
+                                        <%= image_tag "pets/icon/"+get_str_key(@pet.material_3_pet.number)+".png", :itemprop=>"image" %>
+                                    <% end %>
+                                    </a>
+                                </li>
+                                <% end %>
+                                <% if(!@pet.material_4_pet.nil?) %>
+                                <li class="material">
+                                    <a href="<%=pet_path(get_str_key(@pet.material_4))%>">
+                                    <% if @pet.material_4_pet.profile_image.exists? %>
+                                        <img src="<%=@pet.material_4_pet.profile_image.url %>" itemprop="image" />
+                                    <% else %>
+                                        <%= image_tag "pets/icon/"+get_str_key(@pet.material_4_pet.number)+".png", :itemprop=>"image" %>
+                                    <% end %>
+                                    </a>
+                                </li>
+                                <% end %>
+                                <li class="arrow"></li>
+                                <li>
+                                    <a href="<%=pet_path(get_str_key(@pet.after_evolution_pet.number))%>">
+                                    <% if @after_evolution.profile_image.exists? %>
+                                        <img src="<%=@after_evolution.profile_image.url %>" itemprop="image" />
+                                    <% else %>
+                                        <%= image_tag "pets/icon/"+get_str_key(@after_evolution.number)+".png", :itemprop=>"image" %>
+                                    <% end %>
+                                    </a>
+                                </li>
+                                <li class="clearer"></li>
+                            </ul>
+                        <% else %>
+                            沒有
+                        <% end %>
+                    </div><!--end of box-content-inner-->
+                </div>
+            </div> <!--end of radius box 進化-->
+            
+            <div class="radius-box obtain-box" itemprop="obtain">
+                <div class="box-title">入手</div>
+                <div class="box-content">
+                    <div class="box-content-inner">
+                        <% if !@pet.obtain.nil? %>
+                            <%=@pet.obtain.html_safe%>
+                        <% else %>
+                            沒有
+                        <% end %>
+                    </div><!--end of box-content-inner-->
+                </div>
+            </div> <!--end of radius box 入手-->
+            
+            
+            <div class="radius-box same-skill-box" itemprop="same-skill">
+                <div class="box-title">相同技能</div>
+                <div class="box-content">
+                    <div class="box-content-inner">
+                        <% if !@same_skill_pets.nil? && @same_skill_pets.count > 0 %>
+                            <% @same_skill_pets.each do |pet| %>
+                                <a href="<%=pet_path(pet.number)%>">
+                                    <% if pet.profile_image.exists? %>
+                                        <img src="<%=pet.profile_image.url %>" itemprop="image" />
+                                    <% else %>
+                                        <%= image_tag "pets/icon/"+get_str_key(pet.number)+".png", :itemprop=>"image" %>
+                                    <% end %>
+                                </a>
+                            <% end %>
+                        <% else %>
+                            沒有
+                        <% end %>
+                    </div><!--end of box-content-inner-->
+                </div>
+            </div> <!--end of radius box 同技能-->
+            
+        </div><!--post-content-leftarea-->
+        
+        
+        <div class="post-content-rightarea">
+            <div class="right-big-img-wrapper">
+
+                <% if @pet.right_big_image.exists? %>
+                <img src="<%=@pet.right_big_image.url %>" />
+                <% else %>
+                <%= image_tag "pets/big/"+get_str_key(@pet.number)+".png" %>
+                <% end %>
+            </div>
+        </div><!--post-content-rightarea-->
+        <div class="clearer"></div>
+        
+        <% if !@pet.content.blank? %>
+        <div class="textarea-content">
+            <%=@pet.content.html_safe%>
+        </div>
+        <% end %>
+    </div><!--end of post-content-wrapper-->
+
+</div><!--end of post-wrapper-->
+</section>
+
+<% if is_admin? %>
+<section id="admin-wrap">
+    <div id="admin-title">Admin Only</div>
+    <div id="admin-inner">
+        <input class="create" type="button" value="Edit" onclick="window.location='<%=edit_pet_path(@pet.id)%>'" />
+        <%= link_to raw('<input class="delete red" type="button" value="Delete" />'), pet_path(@pet),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, html: :ok %>
+    </div>
+</section>
+<% end %>
+
+
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_HK/sdk.js#xfbml=1&version=v2.6&appId=997476640336267";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<section id="comment-wrap">
+    <div id="comment-inner">
+        <div class="fb-comments" data-href="<%=url_for(:only_path => false) %>" data-width="100%" data-numposts="5"></div>
+    </div>
+</section>
+
+<div class="remodal" data-remodal-id="ranking_modal">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <h1>輸入評價</h1>
+    <div class="form_wrapper">
+        <%= form_for :ranking, url: visitor_create_rankings_path(@pet.id), method: :post, :html => {:id => "ranking_form"} do |f| %>
+        <ul class="list">
+            <li>
+                <div class="label">HP</div>
+                <div class="slider_wrapper">
+                    <div class="slider_inner">
+                        <div id="hp_slider"></div>
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <div class="input_inner">
+                        <%= f.text_field :hp, :readOnly => :true, :value=> 0  %>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+            </li>
+            <li>
+                <div class="label">攻擊</div>
+                <div class="slider_wrapper">
+                    <div class="slider_inner">
+                        <div id="attack_slider"></div>
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <div class="input_inner">
+                        <%= f.text_field :attack, :readOnly => :true, :value=> 0  %>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+            </li>
+            <li>
+                <div class="label">能力</div>
+                <div class="slider_wrapper">
+                    <div class="slider_inner">
+                        <div id="ability_slider"></div>
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <div class="input_inner">
+                        <%= f.text_field :ability, :readOnly => :true, :value=> 0  %>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+            </li>
+            <li>
+                <div class="label">隊長技</div>
+                <div class="slider_wrapper">
+                    <div class="slider_inner">
+                        <div id="leader_skill_slider"></div>
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <div class="input_inner">
+                        <%= f.text_field :leader_skill, :readOnly => :true, :value=> 0  %>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+            </li>
+            <li>
+                <div class="label">技能威力／效果</div>
+                <div class="slider_wrapper">
+                    <div class="slider_inner">
+                        <div id="skill_slider"></div>
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <div class="input_inner">
+                        <%= f.text_field :skill, :readOnly => :true, :value=> 0  %>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+            </li>
+            <li>
+                <div class="label">技能回合</div>
+                <div class="slider_wrapper">
+                    <div class="slider_inner">
+                        <div id="skill_round_slider"></div>
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <div class="input_inner">
+                        <%= f.text_field :skill_round, :readOnly => :true, :value=> 0  %>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+            </li>
+            <li>
+                <div class="label">箭頭</div>
+                <div class="slider_wrapper">
+                    <div class="slider_inner">
+                        <div id="arrow_slider"></div>
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <div class="input_inner">
+                        <%= f.text_field :arrow, :readOnly => :true, :value=> 0  %>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+            </li>
+        </ul>
+        <% end %>
+    </div>
+    <br>
+    <button data-remodal-action="cancel" class="remodal-cancel">取消</button>
+    <button class="remodal-confirm" id="visitor_ranking_submit_btn">提交</button>
+</div><!-- End of ranking_modal-->

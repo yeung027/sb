@@ -1,0 +1,276 @@
+<root>
+<div data-sort="data" class="UNITCARD ODD" data-key="1" data-partmatch="ユニット名,リーダースキル,アクティブスキル,能力,リーダースキル分類,アクティブスキル分類">
+	<span class="icon" onclick="ReWrite('0001');"><img src="./images/icon_0001.gif" /></span>
+	<span data-col="ユニット名" data-search-value="クレン"></span>
+	<span data-col="よみがな" data-search-value="くれん"></span>
+	<span data-col="KEY" data-search-value="1"></span>
+	<span data-col="属性" data-search-value="火"></span>
+	<span data-col="タイプ1" data-search-value="バランス"></span>
+	<span data-col="タイプ2" data-search-value="なし"></span>
+	<span data-col="能力" data-search-value="なし,なし"></span>
+	<span data-col="リーダースキル" data-search-value="召獣の連携"></span>
+	<span data-col="リーダースキル分類" data-search-value="コンボ数,攻撃力アップ,なし,なし"></span>
+	<span data-col="アクティブスキル" data-search-value="ファイアチャージ"></span>
+	<span data-col="アクティブスキル分類" data-search-value="直接ダメージ（極小～絶大）,なし,なし,"></span>
+
+	<div id="data_0001" class="data_container">
+		<div class="data_inner">
+			<div class="ss"></div>
+			<div class="name">クレン</div>
+			<div class="find"><strong>入手先</strong><span class="no_link">ノーマルダンジョン（テクニカル含む）</span><span class="no_link">最初に選ぶ</span></div>
+			<div class="degeneration"><strong>進化前</strong>なし</div>
+			<dl class="evolution ">
+				<dt><strong>進化後</strong><span style="background-image:url(./images/icon_0002.gif)" onclick="ReWrite('0002');" >クレイソン</span></dt>
+				<dd><strong>素材</strong><div class="m_list"><span style="background-image:url(./images/icon_0136.gif)" onclick="ReWrite('0136');" >コパピー</span></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="skill leader ">
+				<dt><strong>リーダースキル</strong>召獣の連携</dt>
+				<dd><div class="comment">3コンボ以上で味方の攻撃力が1.4倍になる</div></dd>
+			</dl>
+			<dl class="skill ">
+				<dt><strong>スキル</strong>ファイアチャージ</dt>
+				<dd><div class="comment">敵全体に火属性極小ダメージ</div></dd>
+				<dd><strong>同スキルモンスター</strong><div class="m_list"></div></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+<div data-sort="data" class="UNITCARD EVEN" data-key="1200" data-partmatch="ユニット名,リーダースキル,アクティブスキル,能力,リーダースキル分類,アクティブスキル分類">
+	<span class="icon" onclick="ReWrite('1200');"><img src="./images/icon_1200.gif" /></span>
+	<span data-col="ユニット名" data-search-value="タマアッペン"></span>
+	<span data-col="よみがな" data-search-value="たまあっぺん"></span>
+	<span data-col="KEY" data-search-value="1200"></span>
+	<span data-col="属性" data-search-value="火"></span>
+	<span data-col="タイプ1" data-search-value="なし"></span>
+	<span data-col="タイプ2" data-search-value="なし"></span>
+	<span data-col="能力" data-search-value="#N/A,"></span>
+	<span data-col="リーダースキル" data-search-value="チビアッペンの卵"></span>
+	<span data-col="リーダースキル分類" data-search-value=",,,"></span>
+	<span data-col="アクティブスキル" data-search-value="なし"></span>
+	<span data-col="アクティブスキル分類" data-search-value=",,,"></span>
+
+	<div id="data_1200" class="data_container">
+		<div class="data_inner">
+			<div class="ss"></div>
+			<div class="name">タマアッペン</div>
+			<div class="find"><strong>入手先</strong><span class="no_link">かごの中の果実</span></div>
+			<div class="degeneration"><strong>進化前</strong>なし</div>
+			<dl class="evolution ">
+				<dt><strong>進化後</strong><span style="background-image:url(./images/icon_0708.gif)" onclick="ReWrite('0708');" >チビアッペン</span></dt>
+				<dd><strong>素材</strong><div class="m_list"><span style="background-image:url(./images/icon_1200.gif)" onclick="ReWrite('1200');" >タマアッペン</span><span style="background-image:url(./images/icon_1200.gif)" onclick="ReWrite('1200');" >タマアッペン</span><span style="background-image:url(./images/icon_1200.gif)" onclick="ReWrite('1200');" >タマアッペン</span><span style="background-image:url(./images/icon_1200.gif)" onclick="ReWrite('1200');" >タマアッペン</span></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="skill leader ">
+				<dt><strong>リーダースキル</strong>チビアッペンの卵</dt>
+				<dd><div class="comment">進化するとチビアッペンに成長する</div></dd>
+			</dl>
+			<dl class="skill nodata">
+				<dt><strong>スキル</strong>なし</dt>
+				<dd><div class="comment">なし</div></dd>
+				<dd><strong>同スキルモンスター</strong><div class="m_list"></div></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+    
+<div data-sort="data" class="UNITCARD ODD" data-key="1455" data-partmatch="ユニット名,リーダースキル,アクティブスキル,能力,リーダースキル分類,アクティブスキル分類">
+	<span class="icon" onclick="ReWrite('1455');"><img src="./images/icon_1455.gif" /></span>
+	<span data-col="ユニット名" data-search-value="ハヌマーン"></span>
+	<span data-col="よみがな" data-search-value="はぬまーん"></span>
+	<span data-col="KEY" data-search-value="1455"></span>
+	<span data-col="属性" data-search-value="火"></span>
+	<span data-col="タイプ1" data-search-value="攻撃タイプ"></span>
+	<span data-col="タイプ2" data-search-value="カウンタータイプ"></span>
+	<span data-col="能力" data-search-value="飛行,"></span>
+	<span data-col="リーダースキル" data-search-value="猿将の気"></span>
+	<span data-col="リーダースキル分類" data-search-value="攻撃力アップ,被ダメージ軽減,,"></span>
+	<span data-col="アクティブスキル" data-search-value="天の果実"></span>
+	<span data-col="アクティブスキル分類" data-search-value="反撃,,,"></span>
+
+	<div id="data_1455" class="data_container">
+		<div class="data_inner">
+			<div class="ss"></div>
+			<div class="name">ハヌマーン</div>
+			<div class="find"><strong>入手先</strong><span class="no_link">ランカー島</span></div>
+			<div class="degeneration"><strong>進化前</strong>なし</div>
+			<dl class="evolution ">
+				<dt><strong>進化後</strong><span style="background-image:url(./images/icon_1456.gif)" onclick="ReWrite('1456');" >炎猿将ハヌマーン</span></dt>
+				<dd><strong>素材</strong><div class="m_list"><span style="background-image:url(./images/icon_0151.gif)" onclick="ReWrite('0151');" >プラグリラム</span><span style="background-image:url(./images/icon_0151.gif)" onclick="ReWrite('0151');" >プラグリラム</span><span style="background-image:url(./images/icon_0149.gif)" onclick="ReWrite('0149');" >ダイオール</span><span style="background-image:url(./images/icon_0166.gif)" onclick="ReWrite('0166');" >カラフリード</span></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="skill leader ">
+				<dt><strong>リーダースキル</strong>猿将の気</dt>
+				<dd><div class="comment">火・木属性の味方は、攻撃力が2.1倍＆火・木属性のダメージを30％軽減</div></dd>
+			</dl>
+			<dl class="skill ">
+				<dt><strong>スキル</strong>天の果実</dt>
+				<dd><div class="comment">火・木属性の味方全体が、2ターンの間攻撃を受けた時に攻撃力の6倍で反撃する</div></dd>
+				<dd><strong>同スキルモンスター</strong><div class="m_list"><span style="background-image:url(./images/icon_1456.gif)" onclick="ReWrite('1456');" >炎猿将ハヌマーン</span></div></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+    
+    
+<div data-sort="data" class="UNITCARD EVEN" data-key="142" data-partmatch="ユニット名,リーダースキル,アクティブスキル,能力,リーダースキル分類,アクティブスキル分類">
+	<span class="icon" onclick="ReWrite('0142');"><img src="./images/icon_0142.gif" /></span>
+	<span data-col="ユニット名" data-search-value="マリリオール"></span>
+	<span data-col="よみがな" data-search-value="まりりおーる"></span>
+	<span data-col="KEY" data-search-value="142"></span>
+	<span data-col="属性" data-search-value="水"></span>
+	<span data-col="タイプ1" data-search-value="進化用"></span>
+	<span data-col="タイプ2" data-search-value="なし"></span>
+	<span data-col="能力" data-search-value="なし,なし"></span>
+	<span data-col="リーダースキル" data-search-value="なし"></span>
+	<span data-col="リーダースキル分類" data-search-value="なし,なし,なし,なし"></span>
+	<span data-col="アクティブスキル" data-search-value="なし"></span>
+	<span data-col="アクティブスキル分類" data-search-value="なし,なし,なし,"></span>
+
+	<div id="data_0142" class="data_container">
+		<div class="data_inner">
+			<div class="ss"></div>
+			<div class="name">マリリオール</div>
+			<div class="find"><strong>入手先</strong><span class="no_link">ノーマルダンジョン（テクニカル含む）</span><span class="no_link">ウルカリー採掘場</span></div>
+			<div class="degeneration"><strong>進化前</strong>なし</div>
+			<dl class="evolution nodata">
+				<dt><strong>進化後</strong>なし</dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="skill leader nodata">
+				<dt><strong>リーダースキル</strong>なし</dt>
+				<dd><div class="comment"></div></dd>
+			</dl>
+			<dl class="skill nodata">
+				<dt><strong>スキル</strong>なし</dt>
+				<dd><div class="comment"></div></dd>
+				<dd><strong>同スキルモンスター</strong><div class="m_list"></div></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+    
+<div data-sort="data" class="UNITCARD ODD" data-key="91" data-partmatch="ユニット名,リーダースキル,アクティブスキル,能力,リーダースキル分類,アクティブスキル分類">
+	<span class="icon" onclick="ReWrite('0091');"><img src="./images/icon_0091.gif" /></span>
+	<span data-col="ユニット名" data-search-value="リンカ"></span>
+	<span data-col="よみがな" data-search-value="りんか"></span>
+	<span data-col="KEY" data-search-value="91"></span>
+	<span data-col="属性" data-search-value="火"></span>
+	<span data-col="タイプ1" data-search-value="攻撃"></span>
+	<span data-col="タイプ2" data-search-value="なし"></span>
+	<span data-col="能力" data-search-value="なし,なし"></span>
+	<span data-col="リーダースキル" data-search-value="火の守り"></span>
+	<span data-col="リーダースキル分類" data-search-value="被ダメージ軽減,なし,なし,なし"></span>
+	<span data-col="アクティブスキル" data-search-value="狐火"></span>
+	<span data-col="アクティブスキル分類" data-search-value="直接ダメージ（極小～絶大）,なし,なし,"></span>
+
+	<div id="data_0091" class="data_container">
+		<div class="data_inner">
+			<div class="ss"></div>
+			<div class="name">リンカ</div>
+			<div class="find"><strong>入手先</strong><span class="no_link">ノーマルダンジョン（テクニカル含む）</span><span class="no_link">レアガチャ</span></div>
+			<div class="degeneration"><strong>進化前</strong>なし</div>
+			<dl class="evolution ">
+				<dt><strong>進化後</strong><span style="background-image:url(./images/icon_0092.gif)" onclick="ReWrite('0092');" >狐火リンカ</span></dt>
+				<dd><strong>素材</strong><div class="m_list"><span style="background-image:url(./images/icon_0137.gif)" onclick="ReWrite('0137');" >コマドラ</span><span style="background-image:url(./images/icon_0140.gif)" onclick="ReWrite('0140');" >ルビリオール</span><span style="background-image:url(./images/icon_0151.gif)" onclick="ReWrite('0151');" >プラグリラム</span></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="skill leader ">
+				<dt><strong>リーダースキル</strong>火の守り</dt>
+				<dd><div class="comment">味方が火属性のダメージを25％軽減する</div></dd>
+			</dl>
+			<dl class="skill ">
+				<dt><strong>スキル</strong>狐火</dt>
+				<dd><div class="comment">横一列の敵に火属性小ダメージ</div></dd>
+				<dd><strong>同スキルモンスター</strong><div class="m_list"></div></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+    
+<div data-sort="data" class="UNITCARD ODD" data-key="255" data-partmatch="ユニット名,リーダースキル,アクティブスキル,能力,リーダースキル分類,アクティブスキル分類">
+	<span class="icon" onclick="ReWrite('0255');"><img src="./images/icon_0255.gif" /></span>
+	<span data-col="ユニット名" data-search-value="火の伝承イグナティオス"></span>
+	<span data-col="よみがな" data-search-value="ひのでんしょういぐなてぃおす"></span>
+	<span data-col="KEY" data-search-value="255"></span>
+	<span data-col="属性" data-search-value="火"></span>
+	<span data-col="タイプ1" data-search-value="攻撃"></span>
+	<span data-col="タイプ2" data-search-value="カウンター"></span>
+	<span data-col="能力" data-search-value="なし,なし"></span>
+	<span data-col="リーダースキル" data-search-value="火の力"></span>
+	<span data-col="リーダースキル分類" data-search-value="攻撃力アップ,なし,なし,なし"></span>
+	<span data-col="アクティブスキル" data-search-value="マグマソード"></span>
+	<span data-col="アクティブスキル分類" data-search-value="直接ダメージ（倍率）,なし,なし,"></span>
+
+	<div id="data_0255" class="data_container">
+		<div class="data_inner">
+			<div class="ss"></div>
+			<div class="name">火の伝承イグナティオス</div>
+			<div class="find"><strong>入手先</strong><span><a href="http://www.4gamer.net/games/246/G024675/20150223036/" target="_blank">アンティオ神殿跡</a></span><span><a href="http://www.4gamer.net/games/246/G024675/20141126001/" target="_blank">伝承竜ラッシュ</a></span></div>
+			<div class="degeneration"><strong>進化前</strong>なし</div>
+			<dl class="evolution ">
+				<dt><strong>進化後</strong><span style="background-image:url(./images/icon_0256.gif)" onclick="ReWrite('0256');" >日輪竜イグナティオス</span></dt>
+				<dd><strong>素材</strong><div class="m_list"><span style="background-image:url(./images/icon_0138.gif)" onclick="ReWrite('0138');" >コマンドラ</span><span style="background-image:url(./images/icon_0151.gif)" onclick="ReWrite('0151');" >プラグリラム</span><span style="background-image:url(./images/icon_0160.gif)" onclick="ReWrite('0160');" >グリンシュ</span><span style="background-image:url(./images/icon_0166.gif)" onclick="ReWrite('0166');" >カラフリード</span></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="evolution" style="display:none;">
+				<dt><strong>進化後</strong></dt>
+				<dd><strong>素材</strong><div class="m_list"></div></dd>
+			</dl>
+			<dl class="skill leader ">
+				<dt><strong>リーダースキル</strong>火の力</dt>
+				<dd><div class="comment">火属性の味方は、攻撃力が1.2倍になる</div></dd>
+			</dl>
+			<dl class="skill ">
+				<dt><strong>スキル</strong>マグマソード</dt>
+				<dd><div class="comment">[チェーン]十字列の敵に火属性攻撃力×35倍ダメージ</div></dd>
+				<dd><strong>同スキルモンスター</strong><div class="m_list"><span style="background-image:url(./images/icon_0256.gif)" onclick="ReWrite('0256');" >日輪竜イグナティオス</span><span style="background-image:url(./images/icon_0626.gif)" onclick="ReWrite('0626');" >日輪天竜イグナティオス</span></div></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+    
+</root>

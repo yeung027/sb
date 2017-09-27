@@ -1,0 +1,624 @@
+// Place all the styles related to the pets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body.pets.show
+{
+.pet .post-wrapper .post-content-wrapper
+{
+    width:1160px;
+    text-align: left;
+    margin-top:80px;
+    padding:0 0 60px 60px;
+    line-height: 39px;
+    font-size: 22px;
+    vertical-align: baseline;
+    word-wrap: break-word;
+    font-weight: 200;
+    font-family: 'Raleway', Arial, sans-serif;
+    margin-top:75px;
+}
+
+.post-outer
+{
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
+.post-wrapper
+{
+    background-color: #fff;
+    width:1280px;
+    min-height:435px;
+    text-align: left;
+}
+    
+.pet .post-top-banner
+{
+    vertical-align: bottom;
+    display: table-cell;
+    text-align: left;
+    width:1280px;
+    height:435px;
+    background-image: asset-url("posts/post-top-banner.png", image);
+}
+
+.pet .post-top-banner .profile-box-wrapper
+{
+    display:inline-block;
+    border-radius: 7px;
+    background-color: #fff;
+    width:108px;
+    height:108px;
+    position: absolute;
+    margin:-70px 0 0 56px;
+    padding:12px;
+    border:#c0c0c0 1px solid;
+}
+
+.pet .post-top-banner .profile-box-wrapper .profile-box-inner
+{
+    display:table-cell;
+    border-radius: 7px;
+    width:108px;
+    height:108px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.pet .profile-detail-wrapper
+{
+    height:89px;
+    text-align: left;
+    margin-left: 203px;
+}
+.pet .profile-detail-wrapper .name
+{
+    min-height:63px;
+    line-height: 63px;
+    color:#0a0a0a;
+    font-size: 30px;
+}
+.pet .profile-detail-wrapper .stars-wrapper
+{
+    height:26px;
+    vertical-align: middle;
+}
+.pet .profile-detail-wrapper .star
+{
+    display: inline-block;
+    background-image: asset-url("pets/star.png", image);
+    width:22px;
+    height:22px;
+    margin-right: 2px;
+}
+
+
+.skill-green-box
+{
+    background-color: #1d9d48;
+    border-radius: 7px;
+    padding:0 9px 9px 9px;
+    width:678px;
+}
+.skill-green-box .box-title
+{
+    color:#fff;
+    height:29px;
+    line-height: 29px;
+    overflow: hidden;
+    font-size: 18px;
+    margin-left: 13px;
+}
+.skill-green-box .box-table
+{
+    width: 100%;
+}
+.skill-green-box .box-content, .skill-green-box .box-skill-range
+{
+    height: 98px;
+}
+.skill-green-box .box-content
+{
+    width: 578px;
+    background-color: #fff;
+}
+.skill-green-box .box-content .box-content-wrapper
+{
+    padding:10px 20px;
+    height: 58px;
+    width: 538px;
+    line-height: 25px;
+    font-size: 20px;
+    vertical-align: middle;
+    display: table-cell;
+    overflow: hidden;
+    font-family: “LiHei Pro Medium”, "微軟正黑體";
+}
+.skill-green-box .box-content .box-content-wrapper .box-content-inner
+{
+    display: inline-block;
+}
+
+.skill-green-box .box-skill-range .box-skill-range-inner
+{
+    margin-left: 2px;
+    background-color: #fff;
+    width:98px;
+    min-height: 98px;
+    text-align: center;
+}
+
+.skill-green-box .box-skill-range .box-skill-range-inner .skill-range-table
+{
+    width:98px;
+    height:98px;
+    background-color: #fff;
+}
+
+.skill-green-box .box-skill-range .box-skill-range-inner .skill-range-table td
+{
+    background-color: #c3c3c3;
+    border:#1d9d48 1px solid;
+}
+
+.skill-green-box .box-skill-range .box-skill-range-inner .skill-range-table td.red
+{
+    background-color: #ff1717;
+}
+
+.skill-green-box .box-skill-range .box-skill-range-inner .skill-range-table td.blue
+{
+    background-color: #1763ff;
+}
+
+.pet .post-content-wrapper .post-content-leftarea
+{
+    float:left;
+}
+.pet .post-content-wrapper .post-content-rightarea
+{
+    float:left;
+    margin-left: 13px;
+}
+.pet .post-content-wrapper .right-big-img-wrapper
+{
+    width:450px;
+    overflow: hidden;
+}
+.pet .post-content-wrapper .right-big-img-wrapper img
+{
+    max-width:450px;
+}
+
+    
+.radius-box
+{
+    border-radius: 7px;
+    padding:0 9px 9px 9px;
+    width:678px;
+    font-family: “LiHei Pro Medium”, "微軟正黑體";
+}
+.radius-box .box-title
+{
+    color:#fff;
+    height:29px;
+    line-height: 29px;
+    overflow: hidden;
+    font-size: 18px;
+    margin-left: 13px;
+}
+.radius-box .box-content
+{
+    background-color: #fff;
+    width:678px;
+}
+.radius-box .box-content .box-content-inner
+{
+    padding:20px 20px;
+    min-height: 58px;
+    width: 638px;
+    line-height: 25px;
+    font-size: 20px;
+    vertical-align: middle;
+    display: table-cell;
+    overflow: hidden;
+}
+
+.leader-skill-box
+{
+    background-color: #2e7dd9;
+    margin-top:28px;
+}
+
+.pet .pet-box
+{
+    background-color: #cdcdcd;
+    margin-top:28px;
+}
+    
+.pet .pet-box .box-title .label
+{
+    float:left;
+}
+    
+.pet .pet-box .box-title .value
+{
+    float:right;
+}
+
+.pet .pet-box .box-content-inner
+{
+    text-align: center;
+    display: table-cell;
+}
+
+.pet .pet-box .pet-part-wapper
+{
+    display: inline-block;
+    width: 574px;
+    height:33px;
+}
+
+.pet .pet-box .pet-part-wapper:not(:first-child)
+{
+    margin-top:10px;
+}
+
+.pet .pet-box .pet-part-wapper .pet-part-title, .pet .pet-box .pet-part-wapper .pet-part-mark
+{
+    font-family: “LiHei Pro Medium”, "微軟正黑體";
+    height:20px;
+    line-height: 20px;
+    font-size: 20px;
+    color:#0a0a0a;
+}
+.pet .pet-box .pet-part-wapper .pet-part-title
+{
+    float:left;
+}
+.pet .pet-box .pet-part-wapper .pet-part-mark
+{
+    float:right;
+}
+.pet .pet-box .pet-part-wapper .pet-bar
+{
+    width: 574px;
+    height:13px;
+    background-color: #d9d9d9;
+}
+
+.pet .pet-box .pet-part-wapper .pet-bar .green-bar
+{
+    height:13px;
+    background-color: #8dc153;
+}
+
+.pet .pet-box .circle-bar-wrapper, .pet .pet-box .total-mark-label-wrapper
+{
+    float:right;
+    height:111px;
+    line-height: 111px;
+    #background-color: red;
+}
+.pet .pet-box .circle-bar-wrapper
+{
+    margin:18px 30px 0 0;
+}
+.pet .pet-box .total-mark-label-wrapper
+{
+    margin:18px 20px 0 0;
+    font-family: “LiHei Pro Medium”, "微軟正黑體";
+    font-size: 33px;
+    color:#8dc153;
+}
+
+.pet .pet-box .circle-bar-wrapper #pet-circle-bar-textwrapper
+{
+    position: absolute;
+    margin:-145px 0 0 15px;
+    height:81px;
+    width:81px;
+    line-height: 81px;
+    font-family: “LiHei Pro Medium”, "微軟正黑體";
+    font-size: 33px;
+    color:#8dc153;
+}
+
+.pet .pet-box .visitor-post-botton-wrapper 
+{
+    float:left;
+    height:111px;
+    line-height: 111px; 
+    margin:18px 0 0 33px;
+    font-family: “LiHei Pro Medium”, "微軟正黑體";
+    display: table;
+    vertical-align: middle;
+}
+    
+.pet .pet-box .visitor-post-botton-wrapper .visitor-post-botton-inner
+{
+    color:#fff;
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.pet .pet-box .visitor-post-botton-wrapper .visitor-post-botton-inner #visitor-post-botton
+{
+    height:40px;
+    line-height: 40px;
+    background-color: #2e7dd9;
+    padding:7px 10px;
+    border:#afafaf 3px solid;
+    cursor: pointer;
+} 
+.pet .pet-box .visitor-post-botton-wrapper .visitor-post-botton-inner #visitor-post-botton:hover
+{
+    background-color: #ffc617;
+} 
+.pet .detail-box
+{
+    background-color: #ffc617;
+    margin-top:28px;
+}
+
+.detail-box .detail-icon-wrapper
+{
+    display: table;
+    vertical-align: middle;
+    height:108px;
+}
+
+.detail-box .detail-icon-inner
+{
+    display:table-cell;
+    height:108px;
+    vertical-align: middle;
+}
+.detail-box .detail-icon-inner .image-wrapper, .detail-box .detail-icon-inner .text-wrapper
+{
+    float:left;
+    height:108px;
+}   
+    
+.detail-box .detail-icon-inner .text-wrapper
+{
+    line-height: 108px;
+    color:#0a0a0a;
+    cursor: pointer;
+    margin-left: 10px;
+}  
+.detail-box .detail-icon-inner:hover .text-wrapper
+{
+    color:#ff2d17;
+}
+ 
+    
+.pet .evolution-box
+{
+    background-color: #2e7dd9;
+    margin-top:28px;
+}  
+.pet .evolution-box .box-content-inner
+{
+    margin-top:28px;
+    text-align: left;
+}    
+    
+.pet .evolution-box ul.evolution-list
+{
+    height: 63px;
+    display: inline-block;
+    text-align: center;
+}
+.pet .evolution-box ul.evolution-list li
+{
+    float:left;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.pet .evolution-box ul.evolution-list li img
+{
+    width:63px;
+    height: 63px;
+}
+    
+.pet .evolution-box ul.evolution-list li.add
+{
+    background-image: asset-url("pets/evolution_add.png", image);
+    width:63px;
+    height: 63px;
+}
+
+.pet .evolution-box ul.evolution-list li.arrow
+{
+    background-image: asset-url("pets/evolution_arrow.png", image);
+    width:63px;
+    height: 63px;
+}
+    
+.pet .evolution-box ul.evolution-list li.material
+{
+    margin-right: 10px;    
+}
+
+.pet .obtain-box
+{
+    background-color: #1d9d48;
+    margin-top:28px;
+}
+
+    
+.pet .same-skill-box
+{
+    background-color: #d92e2e;
+    margin-top:28px;
+}
+    
+    
+.pet .textarea-content
+{
+    margin-top:28px;
+    height:auto;
+    padding:0;
+}
+    
+.remodal
+{
+        width: 700px;
+}
+.remodal .form_wrapper
+{
+     margin:20px 0 0 0;   
+}
+.remodal .form_wrapper .list
+{
+    #background-color: red;
+    #height:30px;
+}
+    
+.remodal .form_wrapper .label
+{
+    text-align: left;
+    font-family: “LiHei Pro Medium”, "微軟正黑體";
+    font-size: 20px;
+    margin: 0 0 0px -8px;
+}
+.remodal .form_wrapper .slider_wrapper
+{
+    float:left;
+    width:520px;
+    height:30px;
+    #background-color: red;
+    display: table;
+    vertical-align: middle;
+}   
+.remodal .form_wrapper .slider_wrapper .slider_inner
+{
+    display: table-cell;
+    vertical-align: middle;
+    #background-color: blue;
+}  
+.remodal .form_wrapper .input_wrapper
+{
+    float:right;
+    width:100px;
+    height:30px;
+    #background-color: red;
+    display: table;
+    vertical-align: middle;
+} 
+.remodal .form_wrapper .input_inner
+{
+    display: table-cell;
+    vertical-align: middle;
+    #background-color: blue;
+} 
+.remodal .form_wrapper .input_wrapper input
+{
+    width:70px;
+    height:20px;
+    font-size: 20px;
+    text-align: center;
+    display: inline;
+    font-family: “LiHei Pro Medium”, "微軟正黑體";
+    border-radius: 7px;
+} 
+    
+@media only screen and ( min-width: 1px ) and ( max-width: 1300px ) {
+
+body:not(.android){    
+.pet .post-wrapper .post-content-wrapper
+{
+    width: calc(100vw * 0.95);
+    padding:0;
+    #border:red 1px solid;
+    margin-top:0;
+    display: inline-block;
+}
+.post-wrapper
+{
+    width: 100vw;
+    display: table-cell;
+    text-align: center;
+    #border:black 1px solid;
+}
+    
+.pet .post-top-banner
+{
+    vertical-align: bottom;
+    display: table-cell;
+    text-align: left;
+    width: 100vw;
+    height: calc(100vw /2.9);
+    background-image: asset-url("posts/post-top-banner.png", image);
+    background-size:contain;
+    background-repeat: no-repeat;
+}   
+.pet .post-content-wrapper .post-content-leftarea
+{
+    #border:yellow 1px solid;
+    width:100%;
+}
+.skill-green-box
+{
+    background-color: #1d9d48;
+    border-radius: 7px;
+    padding:0 9px 9px 9px;
+    width: calc((100vw *0.95) - (18px));
+    margin-top: 20px;
+}
+.skill-green-box .box-content
+{
+    width: calc((100vw *0.95) - (118px));
+}   
+    
+.skill-green-box .box-content .box-content-wrapper
+{
+    width: calc((100vw *0.95) - (158px));
+}
+
+ .radius-box
+{
+    width: calc((100vw *0.95) - (18px));
+}
+.radius-box .box-title
+{
+
+}
+.radius-box .box-content
+{
+    width: calc((100vw *0.95) - (18px));
+}
+.radius-box .box-content .box-content-inner
+{
+    width: calc((100vw *0.95) - (58px));
+}   
+    
+.pet .post-content-wrapper .post-content-rightarea
+{
+    margin: 13px 0 0 0;
+}    
+.pet .post-content-wrapper .post-content-rightarea .right-big-img-wrapper   
+{
+    #border:blue 1px solid;   
+    width: calc((100vw *0.95));
+    text-align: center;
+}
+
+.pet .pet-box .pet-part-wapper, .pet .pet-box .pet-part-wapper .pet-bar
+{
+    width: calc((100vw *0.95) - (122px));
+}
+
+.pet .profile-detail-wrapper, .pet .profile-detail-wrapper .name
+{
+    display:table;
+    height: auto;
+}
+    
+}
+}//end of media ( min-width: 961px ) and ( max-width: 1300px )   
+    
+
+}

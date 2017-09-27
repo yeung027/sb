@@ -1,0 +1,40 @@
+<h1 class="backend_h1 users_header color">User Detail</h1>
+
+<% if flash[:notice] %>
+<ul class="notice_wrapper">
+    <li><%=flash[:notice]%></li>
+</ul>
+<% end %>
+
+<table border="0" cellspacing="0" cellpadding="0" class="form_table">
+<tr>
+    <td class="label_td show">
+        Name:
+    </td>
+    <td class="value_td show">
+        <%=@user.name%>
+    </td>
+</tr>
+<tr>
+    <td class="label_td show">
+        Login:
+    </td>
+    <td class="value_td show">
+        <%=@user.login%>
+    </td>
+</tr>
+<tr>
+    <td class="label_td show">
+        Password:
+    </td>
+    <td class="value_td show">
+        <%=@user.password%>
+    </td>
+</tr>
+<tr>
+    <td class="span_td" colspan="2">
+        <input class="back gray" type="button" value="Back" onclick="window.location='<%=users_path%>'" />
+        <input class="create" type="button" value="Edit" onclick="window.location='<%=edit_user_path(params[:id])%>'" />
+    </td>
+</tr>
+</table>

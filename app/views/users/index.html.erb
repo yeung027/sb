@@ -1,0 +1,31 @@
+<h1 class="backend_h1 users_header">Users</h1>
+
+<% if flash[:notice] %>
+<ul class="notice_wrapper">
+    <li><%=flash[:notice]%></li>
+</ul>
+<% end %>
+<table class="backend_list_table sticky_header">
+    <thead>
+        <tr>
+            <th style="text-align:left;">Login</th>
+            <th style="text-align:left;">Password</th>
+            <th style="text-align:left;">Last update Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+        <tr onclick="window.location='<%=user_path(user)%>'">
+            <td><%=user.login%></td>
+            <td><%=user.password%></td>
+            <td><%=user.updated_at%></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @users %>
+<div class="clearer"></div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+<script>
+    sticky_table_init();
+</script>
